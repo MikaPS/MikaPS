@@ -1,5 +1,6 @@
 import requests
 import os
+import matplotlib.pyplot as plt
 
 TOKEN = os.environ.get('GITHUB_TOKEN')
 USERNAME = "MikaPS"
@@ -14,7 +15,6 @@ repos_data = repos_response.json()
 languages_count = {}
 
 for repo in repos_data:
-    repo_name = repo["name"]
     languages_url = repo["languages_url"]
     
     # Fetch languages for each repo
@@ -31,10 +31,24 @@ total_bytes = sum(languages_count.values())
 percentages = {lang: round((count / total_bytes) * 100, 2) for lang, count in languages_count.items()}
 # Display top 5 languages by percentage
 sorted_languages = sorted(percentages.items(), key=lambda x: x[1], reverse=True)[:5]
-# print(sorted_languages)
-# Display results
-# for lang, percentage in sorted_languages:
-#     print(f"{lang}: {percentage:.2f}%")
 
-def get_language_data():
-    return sorted_languages
+labels = [label[0] for label in sorted_languages] 
+percentages = [percentage[1] for percentage in sorted_languages] 
+
+plt.figure(figsize=(6, 6))
+bars = plt.bar(range(len(labels)), percentages, color=['orange', 'red', 'purple', 'blue', 'green'])
+
+# Add labels on the bars
+for i, bar in enumerate(bars):
+    plt.text(bar.get_x() + bar.get_width() / 2, bar.get_height() - 3, f"{percentages[i]}%", ha='center', color='white', fontsize=12)
+
+# Set x-axis ticks and labels
+plt.xticks(range(len(labels)), labels)
+
+plt.title('Language Distribution')
+plt.ylabel('Percentage (%)')
+plt.xlabel('Languages')
+
+# Save the figure
+plt.tight_layout()
+plt.savefig('chart-image.png')

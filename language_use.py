@@ -7,7 +7,7 @@ USERNAME = "MikaPS"
 headers = {
     "Authorization": f"token {TOKEN}"
 }
-# Fetch repositories
+# Fetch repositories 
 repos_url = f"https://api.github.com/users/{USERNAME}/repos"
 repos_response = requests.get(repos_url, headers=headers)
 repos_data = repos_response.json()

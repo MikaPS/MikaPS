@@ -25,9 +25,10 @@ jobs:
       - name: Run Python Script
         run: python language_use.py
 
-      - name: Commit and push changes
-        uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_message: Update chart image
-          commit_user_name: GitHub Action
-          commit_user_email: action@github.com
+      - name: Commit and Push Changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add chart-image.png
+          git commit -m "Update chart image"
+          git push https://${{ secrets.GIT_TOKEN }}@github.com/MikaPS/MikaPS.git

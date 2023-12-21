@@ -11,11 +11,18 @@ headers = {
 repos_url = f"https://api.github.com/users/{USERNAME}/repos"
 repos_response = requests.get(repos_url, headers=headers)
 repos_data = repos_response.json()
+# print(" repos_data ", repos_data)
 
 languages_count = {}
+# print(type(repos_data))
 
 for repo in repos_data:
-    languages_url = repo["languages_url"]
+    if not isinstance(repo, dict):
+        print(type(repo))
+        print(repo)
+        continue
+    else:
+        languages_url = repo["languages_url"]
     
     # Fetch languages for each repo
     languages_response = requests.get(languages_url, headers=headers)

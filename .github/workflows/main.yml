@@ -1,8 +1,11 @@
 name: Update README with Language Use Stats
 
 on:
+  push:
+    branches:
+      - main
   schedule:
-    - cron: "20 14 * * *" # Run every day at 2:05 PM PST
+    - cron: "0 0 * * *"
 
 jobs:
   update-readme:

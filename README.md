@@ -23,7 +23,6 @@ Throughout my academic career, I gained experiences in a variety of languages!
   - Utilization of `Vite PWA plug-in` to support offline web and mobile [play](https://github.com/MikaPS/GardenSimulator2023).
   - Incorporation of `internal and external DSLs` and an auto-save functionality.
   - `Localization` to 3 languages with a switchable `internationalization`
-  - [Example project](https://github.com/MikaPS/GardenSimulator2023)
   - Displaying real-life location data of users on a [map](https://github.com/MikaPS/cmpm-121-demo-3) (`Leaflet library`)
   - Using Build platforms (`vite`) and frameworks (`Phaser`)
 - `Python`:

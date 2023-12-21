@@ -11,15 +11,11 @@ headers = {
 repos_url = f"https://api.github.com/users/{USERNAME}/repos"
 repos_response = requests.get(repos_url, headers=headers)
 repos_data = repos_response.json()
-# print(" repos_data ", repos_data)
 
 languages_count = {}
-# print(type(repos_data))
 
 for repo in repos_data:
     if not isinstance(repo, dict):
-        print(type(repo))
-        print(repo)
         continue
     else:
         languages_url = repo["languages_url"]
@@ -38,7 +34,7 @@ total_bytes = sum(languages_count.values())
 percentages = {lang: round((count / total_bytes) * 100, 2) for lang, count in languages_count.items()}
 # Display top 5 languages by percentage
 sorted_languages = sorted(percentages.items(), key=lambda x: x[1], reverse=True)[:5]
-
+print(sorted_languages)
 labels = [label[0] for label in sorted_languages] 
 percentages = [percentage[1] for percentage in sorted_languages] 
 

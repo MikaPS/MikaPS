@@ -50,7 +50,7 @@ for i, bar in enumerate(bars):
     plt.text(bar.get_x() + bar.get_width() / 2, bar.get_height() - 3, f"{percentages[i]}%", ha='center', color='white', fontsize=12)
 
 # Set x-axis ticks and labels
-plt.xticks(range(len(labels)), labels)
+plt.xticks(range(len(labels)), labels) 
 
 plt.title('Language Distribution')
 plt.ylabel('Percentage (%)')

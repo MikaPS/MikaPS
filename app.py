@@ -1,5 +1,5 @@
 from flask import Flask, jsonify
-import language_use  # This is the script we created earlier
+import language_use # my python script
 import matplotlib.pyplot as plt
 app = Flask(__name__)
 

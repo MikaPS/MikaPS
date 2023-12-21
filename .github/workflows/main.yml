@@ -2,7 +2,7 @@ name: Update README with Language Use Stats
 
 on:
   schedule:
-    - cron: "0 14 * * *" # Run every day at midnight
+    - cron: "0 14 * * *" # Run every day at 2 PM
 
 jobs:
   update-readme:
@@ -11,13 +11,15 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Use Node.js
-        uses: actions/setup-node@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
         with:
-          node-version: "14"
+          python-version: "3.11.5"
 
       - name: Install dependencies
-        run: npm install
+        run: pip install -r requirements.txt
 
-      - name: Update README
-        run: node index.js
+      - name: Run Flask Application
+        run: |
+          export FLASK_APP=app.py
+          flask run --host=0.0.0.0 --port=5000

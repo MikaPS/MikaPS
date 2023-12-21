@@ -1,5 +1,8 @@
 ### Hi there 👋
 
+Looking at the language distributions of my current repos:
+![Language Distribution](./chart-image.png)
+
 <!--
 **MikaPS/MikaPS** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 

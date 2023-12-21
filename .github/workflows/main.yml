@@ -2,7 +2,7 @@ name: Update README with Language Use Stats
 
 on:
   schedule:
-    - cron: "0 14 * * *" # Run every day at 2 PM
+    - cron: "5 14 * * *" # Run every day at 2 PM
 
 jobs:
   update-readme:

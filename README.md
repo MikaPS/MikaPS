@@ -1,7 +1,7 @@
 <h3 align="center">
     Hi there 👋
 </h3>
-<p align="center"> My name is Mika! <br>I am a Junior at UCSC, working towards a B.S. in Computer Science: Game Design and a B.S. in Cognitive Science. </p>
+<p align="center"> My name is Mika! <br>I am a fourth year at UCSC, working towards a B.S. in Computer Science: Game Design and a B.S. in Cognitive Science. </p>
 
 <h3 align="center"> Projects/Skills: </h3>
 
